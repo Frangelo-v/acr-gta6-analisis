@@ -1,0 +1,6 @@
+dnfile==0.18.0
+dncil==1.0.2
+pycryptodome
+unicorn==2.1.4
+pefile
+capstone
