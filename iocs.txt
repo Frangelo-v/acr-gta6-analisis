@@ -1,0 +1,99 @@
+# sha256
+
+4028cf78cc9640051986d5635b69051df487c9b9d7468e224a6e346950686448  Grand_Theft_Auto_VI_GTA_6_-_Extended_Loo_Archive_win_274495.zip
+564471a40d870bf3525fe8b32680153cec567d8b26641b67dc36cec72fcfa1e5  DassmMQOJ.exe
+94e4436fc76dad2eb32150d85169009da56b59486c24d816188d849c3717fe2a  XLBugHandler.dll - stealer loader
+f0c2d566a1f52a0f7f4f2c1704d85496ecf4cabae64e874f38e8697e3d260316  XLBugHandlerazfanugogos.dll
+f1d7c3db14089494899ca7ff7d180423491af7dd6d8e7cc5ae06d5c82ea03d0e  owalcxcPkvGXPpxK.msi - msi clipper
+3fa205753d28e76ecd680d617df2c68d43cfdecffb932db855ac48b9f669d8f8  owalcxWOrXPzw5AM.msi - msi proxy
+9db50ddab4741de2d1cc38a3848deb1f398f76bed50cec6e48259420c588e0fb  MSBuild.exe (Storage Controller Service)
+9ac4e30bf419acf34eb11ff27924941505a5e8a20986561644ceae794523ac87  MSBuild.exe (Audio Service Helper)
+7ed3da76ce7ccb6901184bf3c2857f8a2f17f03869b6e785d1cde1a08ef8c74a  MonoOptions.wsf
+8dcbd467a261fff52ba16afccc9ae23047aa8c932feff24f0ec10bb324b5336d  FinancialReporting.wsf
+caa1da70b0a88f45adf393d975a4d0661ebd81d3d2fef4b86647cf732ea389eb  stage2 proxy
+caeb0eaee71e81b5c916361e27cb402cd1f72860d193a84ba587cc3a35e97976  stage2 clipper
+746b27a6a0c1552712f32b4b95641df669d01268256d895d1085512c6f19462d  stage3 proxy
+aa1da7a94f944b95107ef9c554c88c6fd220305c2435abfd7ca52c133e866ddf  stage3 clipper
+cc5111e156e036e84725c1631166833227ce91d0d4037a5dd203dc7e22d6f765  LinPribernex.js dec
+760ebd33d9713f7074d9eeda6477cdf4d64cc440ea1e256b33b7d1e6b229df88  GrifordpiakTheinmiall.js dec
+9b3134f20708f46829978422016ff93093b8f80aab418a6c90322f1bd67d9aee  stealer
+cd0d287796bb62fa84f1d229b6b14ba20754c4a10b0edd4e988436140e427289  proxy
+a29d6034ef88af8ac53c24cb62942e0802b1fb777b9eac4372fb47ae5a3c9b8d  clipper
+
+# download
+
+uq8jxr[.]cyou
+192169540[.]com
+
+# c2
+
+tap.cloudlinkbrh[.]cc
+tap.safertunnelnye[.]cc
+zanakillakill[.]cc
+commercialogs[.]com
+
+# clipper c2 (contract 0xe9D1A9fB1C57a00e8D696FE799cD717c8f311ac9)
+
+2026-03-16  evil-toy[.]cc
+2026-03-21  mpla-clo[.]cc
+2026-06-10  gomezdown[.]cc
+2026-07-01  islandepstain[.]cc
+2026-07-09  gamorarar[.]cc
+2026-07-13  majajaklop[.]cc
+2026-07-23  glomuzop[.]cc
+2026-07-28  globalprotextetx[.]cc
+2026-08-05  hulahoopproft[.]cc
+2026-08-10  vuchicpidar[.]cc
+2026-08-19  klopasnarhia[.]cc
+2026-08-26  gamezklop[.]cc
+2026-09-13  holopolsglobal[.]cc
+2026-09-21  colombiacocajo[.]cc
+2026-09-27  globalprotecnode[.]cc
+2026-09-29  beblormakran[.]cc
+2026-10-01  sevurehostmaineth[.]com
+2026-10-03  globalprotextcommerc[.]at
+2026-10-04  goldrabprotect[.]cc
+2026-10-05  gomzablobws[.]cc
+2026-10-07  antimalvareprotect[.]cc
+2026-10-09  globalcoclos[.]cc
+2026-10-13  majalaganja[.]cc
+2026-10-13  capchaprotectcs[.]com
+2026-10-19  spscryspy[.]com
+2026-10-23  loposoniois[.]com
+2026-10-28  itaciprotec[.]com
+2026-11-04  clopprotext[.]com
+2026-11-10  holepticglovec[.]com
+2026-11-15  globalnick[.]com
+2026-11-20  commercialogs[.]com
+
+# clipper wallets
+
+Bitcoin       19eWJh8J6Mx9DrGXKEv3ojKmqw8Cv9pscK
+Bitcoin       3BFNGKQZW9FcwxHmBGNfctsCdiSiqT8qZk
+Bitcoin       bc1qtmvdcp0p5j3jd9a4k8e8qvv5gy9hrg7w28wxkg
+Bitcoin       bc1paxqkcessjkz7ywhnmk8wh58v402ysdjd5x09auhkn0z9m3p4uzcqtjhfv2
+Ethereum/BNB  0x0F14fc3bfAc3726172aCd08Fe4bFb79B633E76ff
+TON           UQBNOrnQlzo3ftqm0Jj5Sf9zEHlPApapd-rWsAHREzkweiTw
+Tron          TWXh8n73LuT5MJ23pd8dCjFskRZckveFbP
+Solana        DcJHrrHSgvFpsYxqb6g97uaQTd2kE31rPUeDZTeDsjVq
+Litecoin      LUut5sRxQzEPUM6NobeyanY9Yi748ZztsX
+Litecoin      MAkF7mCn3tPqp662daybvERzwsKQYqnzM8
+Litecoin      ltc1qdfryskhwlwyernnpf348qtsh36rereugpgyu9s
+Bitcoin Cash  bitcoincash:qzmvjauj8j2parcdn0a54samn9trnqf30cdufdf555
+Dogecoin      DJhtvoh4N49pt2yfTQWgjnStBBnD4KdbRy
+Ripple        rpZEAWYtiB6bJ16NuLbGCc6CZ6jJdKfb63
+Dash          Xet9CxZ8ihR3Cqu32nbShKABRf2FTUqXxd
+Ravencoin     RTCqpJfyxBS4J3p2b5e5EKju1cc1FjKiMh
+Algorand      U65INNXNQYFK5WO5KI4UKDJV7XVVUJ36UCVRCQLGYW7ST7IFNM6ZWHASIM
+Cosmos        cosmos1qmxpyqgh3auy2k090cqu4q7h4y52j0pjv2cp07
+Zcash         t1g4qQXruzwppDA8eoNJdEPwbgRavMh7Tg4
+
+# host
+
+DeskSessionService
+SysAgentRuntime
+MonoOptions.wsf
+FinancialReporting.wsf
+XLBugHandler.dll
+update-S-1-5-26-15297236-4840534596-8490206048-3100
+C:\Users\Public\.ff_tmp
