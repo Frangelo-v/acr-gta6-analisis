@@ -1,76 +1,49 @@
-# "GTA 6 gratis": ladrón + proxy + clipper
+# acr-gta6-analisis
 
-Análisis de un zip que se reparte como si fuera GTA 6 (noviembre de 2026). Adentro no hay juego. Lo que instala son
-tres cosas distintas: un ladrón de contraseñas, un proxy y un programa que te cambia las direcciones de cripto al copiar.
+Zip falso de "GTA 6" que anda circulando desde noviembre 2026. Suelta un stealer (Amatera / ACR 4.6.7-alpha1), un
+proxy y un clipper.
 
-Aquí están los indicadores, la explicación de cada parte y los scripts que usé para sacarle las capas.
-**No hay muestras en este repo.** Los hashes están en `ioc/hashes.csv`.
+- [writeup.md](writeup.md)
+- [iocs.txt](iocs.txt)
+- [rules.yar](rules.yar)
+- [strings.txt](strings.txt) strings del stealer
 
-## Si ya lo abriste
+No subo las muestras.
 
-1. Desconecta la PC de internet.
-2. Desde **otro** aparato cambia contraseñas y cierra todas las sesiones (Google, Telegram, Discord, Steam, bancos).
-   Cambiar la contraseña sin cerrar sesiones no alcanza: se llevan las cookies.
-3. En Telegram: Ajustes > Dispositivos > Cerrar todas las demás sesiones, y pon verificación en dos pasos.
-4. Si tenías cripto en extensiones, muévela a una billetera nueva creada en otro equipo.
-5. Busca lo que dice `analisis/limpieza.md`. Lo más seguro es formatear.
+## scripts
 
-## Cómo llega
+```
+pip install -r scripts/requirements.txt
+```
 
-    página falsa (*.uq8jxr[.]cyou)
-      -> Grand_Theft_Auto_VI_GTA_6_-_...zip  (bajado de *.192169540[.]com)
-        -> DassmMQOJ.exe + XLBugHandler.dll          ladrón (Amatera / ACR, 4.6.7-alpha1)
-        -> "Storage Controller Service" (Marvell)    proxy
-        -> "Audio Service Helper" (Creative)         clipper
-
-Los dos "servicios" son carpetas que parecen un proyecto normal de C#, con su .csproj, README, CHANGELOG y LICENSE.
-Se ejecutan con MSBuild, que es de Microsoft, y por eso no llaman la atención.
-
-- [analisis/cadena.md](analisis/cadena.md): las capas, una por una
-- [analisis/ladron.md](analisis/ladron.md)
-- [analisis/proxy.md](analisis/proxy.md)
-- [analisis/clipper.md](analisis/clipper.md): incluye cómo saca su servidor de la blockchain
-- [analisis/limpieza.md](analisis/limpieza.md)
-
-## Desofuscador
-
-    pip install -r desofuscador/requirements.txt
-
-    python desofuscador/etapa2.py CARPETA etapa2.bin          # resx -> PE de .NET
-    python desofuscador/textos.py etapa2.bin                  # textos del código virtualizado
-    python desofuscador/contenedor.py etapa2.bin partes       # archivos cifrados de adentro
-    python desofuscador/etapa3.py partes/FianBro.js r3vWWbc0 etapa3.bin
-    python desofuscador/llaves.py etapa3.bin                  # llaves de los programas finales
-    python desofuscador/etapa3.py partes/SeigateBrauport.js VDkHXxEq3VpA final.bin
-
-Nada de eso ejecuta el malware. `llaves.py` usa un intérprete de CIL (`cil.py`) que solo conoce las funciones puestas a
-mano en `bcl.py`, todas de mentira.
-
-`x86.py` es aparte. Emula la DLL del ladrón con Unicorn y un Windows inventado, y `textos_ladron.py` la aprovecha para
-descifrar sus textos con sus propias funciones. Está hecho a la medida de esta muestra (direcciones fijas) y lee las
-DLL de `SysWOW64` como datos, así que hay que correrlo en Windows:
-
-    set MUESTRA=C:\ruta\con\los\.vir
-    python desofuscador\textos_ladron.py
-
-Aunque sea emulación, hazlo en una máquina virtual.
-
-Llaves de estas muestras:
-
-| archivo | llave RC4 |
+| script | |
 |---|---|
-| FianBro.js | r3vWWbc0 |
-| LinPribernex.js | iTmjNaPnLEylOnK |
-| SeigateBrauport.js | VDkHXxEq3VpA |
-| HaullstimCiarquuton.js | 1koMm4y4X5U |
-| GrifordpiakTheinmiall.js | DdzYH6OU |
-| MaurzuxQueinfek.js | zcmdh9gsfeTrmu |
+| resx_extract.py | saca el PE de .NET del Resources.resx |
+| dotnet_strings.py | strings de la stage2 |
+| unpack.py | separa los 3 archivos que trae la stage2 |
+| decrypt.py | RC4 + LZMA |
+| get_keys.py | keys de los payloads finales (emula la stage3) |
+| etherhiding.py | C2 actual del clipper |
+| stealer_strings.py | strings del stealer, con unicorn. Solo esta muestra |
 
-## Qué no sé
+```
+python resx_extract.py -d "Storage Controller Service" -o stage2.bin
+python unpack.py -f stage2.bin -o out
+python decrypt.py -f out/FianBro.js -k r3vWWbc0 -o stage3.bin
+python get_keys.py -f stage3.bin
+python decrypt.py -f out/SeigateBrauport.js -k VDkHXxEq3VpA -o proxy.bin
+```
 
-- Quién está detrás. Los tres programas vienen en la misma descarga, pero esto se alquila: el que lo reparte y el que
-  lo programó pueden no ser el mismo.
-- Qué archivos exactos se lleva el ladrón en cada caso. Puede recibir esa lista del servidor.
-- Para qué sirven LinPribernex.js y GrifordpiakTheinmiall.js. Los descifré pero no los miré a fondo.
+Probado con:
 
-Si tienes otra muestra de la misma campaña y los scripts fallan, abre un issue con el hash (no con el archivo).
+```
+Storage Controller Service   9db50ddab4741de2d1cc38a3848deb1f398f76bed50cec6e48259420c588e0fb
+Audio Service Helper         9ac4e30bf419acf34eb11ff27924941505a5e8a20986561644ceae794523ac87
+```
+
+(son los hashes del MSBuild.exe de cada carpeta)
+
+## si lo abriste
+
+Cierra todas las sesiones desde otro equipo (google, telegram, discord, steam), cambia contraseñas y formatea. Cambiar
+solo la contraseña no sirve porque se llevan las cookies.

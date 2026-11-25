@@ -1,0 +1,6 @@
+dnfile
+dncil
+pycryptodome
+unicorn
+pefile
+capstone
